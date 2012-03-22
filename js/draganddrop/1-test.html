@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5 : Drag & Drop</title>
+		<link rel="stylesheet" href="jquery-ui-1.8.18.custom.css" type="text/css" media="all" />
+	</head>
+	<body>
+		<style>
+			body{
+				text-align:center;
+				background-color:#777;
+			}
+			#calendrier, .jours, h1, .menu, .repas{
+				border:1px solid black;
+			}
+			#calendrier{
+				margin:auto;
+				width:300px;
+			}
+			.menu{
+				width:140px;
+			}
+			.repas{
+				display:inline-block;
+			}
+			h1:hover, h2:hover, .entree:hover, .plat:hover, .dessert:hover{
+				cursor: move;
+			}
+		</style>
+		<div id="calendrier">
+		<div class="jours">
+				<div class="jour">
+					<h1>Lundi</h1>
+					<div class="repas">
+						<div class="menu">
+							<h2>Midi</h2>
+							<div class="entree"><a>Entrée 1</a></div>
+							<div class="plat"><a>divlat 1</a></div>
+							<div class="dessert"><a>Dessert 1</a></div>
+						</div>
+					</div>
+					<div class="repas">
+						<div class="menu">
+							<h2>Soir</h2>
+							<div class="entree"><a href="#">Entrée 2</a></div>
+							<div class="plat"><a href="#">Pldivt 2</a></div>
+							<div class="dessert"><a href="#">Dessert 2</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="jours">
+				<div class="jour">
+					<h1>Mardi</h1>
+					<div class="repas">
+						<div class="menu">
+							<h2>Midi</h2>
+							<div class="entree"><a>Entrée 1</a></div>
+							<div class="plat"><a>divlat 1</a></div>
+							<div class="dessert"><a>Dessert 1</a></div>
+						</div>
+					</div>
+					<div class="repas">
+						<div class="menu">
+							<h2>Soir</h2>
+							<div class="entree"><a href="#">Entrée 2</a></div>
+							<div class="plat"><a href="#">Pldivt 2</a></div>
+							<div class="dessert"><a href="#">Dessert 2</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="jours">
+				<div class="jour">
+					<h1>Mercredi</h1>
+					<div class="repas">
+						<div class="menu">
+							<h2>Midi</h2>
+							<div class="entree"><a>Entrée 1</a></div>
+							<div class="plat"><a>divlat 1</a></div>
+							<div class="dessert"><a>Dessert 1</a></div>
+						</div>
+					</div>
+					<div class="repas">
+						<div class="menu">
+							<h2>Soir</h2>
+							<div class="entree"><a href="#">Entrée 2</a></div>
+							<div class="plat"><a href="#">Pldivt 2</a></div>
+							<div class="dessert"><a href="#">Dessert 2</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="jours">
+				<div class="jour">
+					<h1>Jeudi</h1>
+					<div class="repas">
+						<div class="menu">
+							<h2>Midi</h2>
+							<div class="entree"><a>Entrée 3</a></div>
+							<div class="plat"><a>divlat 3</a></div>
+							<div class="dessert"><a>Dessert 3</a></div>
+						</div>
+					</div>
+					<div class="repas">
+						<div class="menu">
+							<h2>Soir</h2>
+							<div class="entree"><a href="#">Entrée 4</a></div>
+							<div class="plat"><a href="#">Pldivt 4</a></div>
+							<div class="dessert"><a href="#">Dessert 4</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="jquery-ui-1.8.18.custom.min.js" ></script>
+		<script>
+		(function(){
+			// initialisation des éléments draggable
+			$( ".entree a, .plat a, .dessert a, .menu, .jour" ).draggable({
+				cursor: "move",
+				appendTo: "body", 	// permet de ce déplacer partout dans le document
+				helper: "clone",   	// clone l'élément pendant le déplacement
+				revert : "invalid" 	// revient à la position initial si on ne le pose pas là ou il faut
+			});
+			// initialisation des options des éléments draggables
+			$(".menu").draggable("option", "handle", "h2"); 	  //c'est h2 qui permettra de déplacer les menu
+			$(".menu").draggable("option", "cursorAt", {top:30}); //permet d'améliorer l'affichage de l'élément qui se déplace par rapport  à son origine
+			$(".jour").draggable("option", "handle", "h1");	  // h1 permettra de déplacer les jours
+			
+			// initialisation des éléments droppable
+			$( ".entree, .plat, .dessert, .repas, .jours" ).droppable({
+				activeClass: "ui-state-default",
+				hoverClass: "ui-state-hover"
+			});
+
+			// restriction des éléments
+			$(".entree").droppable("option", "accept", ".entree a");
+			$(".plat").droppable("option", "accept", ".plat a");
+			$(".dessert").droppable("option", "accept", ".dessert a");
+			$(".repas").droppable("option", "accept", ".menu");
+			$(".jours").droppable("option", "accept", ".jour");
+
+			//---- Evénement ------ //
+			
+			// pour les entrée, plat et dessert
+			$( ".entree, .plat, .dessert" ).on( "drop" , function( event, ui ) {
+				var parent = ui.draggable.parent(),
+					child = $( this ).children();
+				child.appendTo( parent );
+				ui.draggable.appendTo( this );
+			});
+			
+			// pour les menus
+			$(".repas").on("drop",function( event, ui ) {
+
+				//si c'est bien un repas que l'on déplace
+				if(ui.draggable.hasClass("menu")){			
+					
+					//Déclaration
+					var repas1 = $(this).find("h2"),
+						repas2 = ui.draggable.find("h2"),
+						temp=repas2.text(),
+						parent = ui.draggable.parent(),
+						child = $( this ).children();
+
+					//on rempalce les titres avant de remplacer les éléments pour remettre les bon titres
+					repas2.text(repas1.text());
+					repas1.text(temp);
+					//on rempalce les éléments
+					child.appendTo( parent );
+					ui.draggable.appendTo( this );
+				}
+			});
+
+			// pour les jours
+			$(".jours").on("drop",function( event, ui ) {
+
+				//si c'est bien un jour que l'on déplace
+				if(ui.draggable.hasClass("jour")){			
+					
+					//Déclaration
+					var repas1 = $(this).find("h1"),
+						repas2 = ui.draggable.find("h1"),
+						temp=repas2.text(),
+						parent = ui.draggable.parent(),
+						child = $( this ).children();
+
+					//on rempalce les titres avant de remplacer les éléments pour remettre les bon titres
+					repas2.text(repas1.text());
+					repas1.text(temp);
+					//on rempalce les éléments
+					child.appendTo( parent );
+					ui.draggable.appendTo( this );
+				}
+			});
+		
+
+		})();
+		
+		</script>
+	</body>
+</html>
