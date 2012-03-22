@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>ProgressBar</title>
+		<style>
+			body{
+				text-align:center;
+				background-color:#fff;
+			}
+			#progressbar{
+				width:700px;
+				height:40px;
+				margin:auto;
+			}
+			#progressbar .progressbar{
+				display: inline-block;
+				margin-right: -0.3em;
+			}
+			#progressbar .bar{
+				background-color:#bbb;
+			    height: 6px;
+			    margin-bottom: 17px;
+			    width: 125px;
+			}
+			#progressbar .bar:first-child,
+			#progressbar .bar.last{
+				width:50px;
+			}
+			#progressbar .step{
+				height:40px;
+				width:40px;
+			}
+			#progressbar .bar.finish{
+				background: #9dc443;
+			}
+			#progressbar .bar.loading{
+				background: #9dc443; /* Old browsers */
+				background: -moz-linear-gradient(-45deg,  #9dc443 9%, #cccccc 14%, #9dc443 18%, #9dc443 24%, #cccccc 29%, #9dc443 34%, #9dc443 39%, #cccccc 43%, #9dc443 48%, #bbbbbb 64%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, right bottom, color-stop(9%,#9dc443), color-stop(14%,#cccccc), color-stop(18%,#9dc443), color-stop(24%,#9dc443), color-stop(29%,#cccccc), color-stop(34%,#9dc443), color-stop(39%,#9dc443), color-stop(43%,#cccccc), color-stop(48%,#9dc443), color-stop(64%,#bbbbbb)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(-45deg,  #9dc443 9%,#cccccc 14%,#9dc443 18%,#9dc443 24%,#cccccc 29%,#9dc443 34%,#9dc443 39%,#cccccc 43%,#9dc443 48%,#bbbbbb 64%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(-45deg,  #9dc443 9%,#cccccc 14%,#9dc443 18%,#9dc443 24%,#cccccc 29%,#9dc443 34%,#9dc443 39%,#cccccc 43%,#9dc443 48%,#bbbbbb 64%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(-45deg,  #9dc443 9%,#cccccc 14%,#9dc443 18%,#9dc443 24%,#cccccc 29%,#9dc443 34%,#9dc443 39%,#cccccc 43%,#9dc443 48%,#bbbbbb 64%); /* IE10+ */
+				background: linear-gradient(-45deg,  #9dc443 9%,#cccccc 14%,#9dc443 18%,#9dc443 24%,#cccccc 29%,#9dc443 34%,#9dc443 39%,#cccccc 43%,#9dc443 48%,#bbbbbb 64%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dc443', endColorstr='#bbbbbb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+			}
+		</style>
+	</head>
+	<body>
+		<div id="progressbar">
+			<div class="bar progressbar finish"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar finish"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar loading"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar last"></div>
+		</div>
+		<script type="text/javascript" src="jquery-1.7.1.min.js" ></script>
+		<script>
+		(function(){
+			console.log("");
+		})();
+		
+		</script>
+	</body>
+</html>
