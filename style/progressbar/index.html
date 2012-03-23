@@ -8,33 +8,34 @@
 				text-align:center;
 				background-color:#fff;
 			}
-			#progressbar{
+			.wrap{
 				width:700px;
 				height:40px;
 				margin:auto;
 			}
-			#progressbar .progressbar{
+			.wrap .progressbar{
 				display: inline-block;
 				margin-right: -0.3em;
 			}
-			#progressbar .bar{
+			.wrap .bar{
 				background-color:#bbb;
 			    height: 6px;
 			    margin-bottom: 17px;
 			    width: 125px;
+			    text-align:left;
 			}
-			#progressbar .bar:first-child,
-			#progressbar .bar.last{
+			.wrap .bar:first-child,
+			.wrap .bar.last{
 				width:50px;
 			}
-			#progressbar .step{
+			.wrap .step{
 				height:40px;
 				width:40px;
 			}
-			#progressbar .bar.finish{
+			.wrap .bar.finish{
 				background: #9dc443;
 			}
-			#progressbar .bar.loading{
+			.wrap .bar.loading{
 				background: #9dc443; /* Old browsers */
 				background: -moz-linear-gradient(-45deg,  #9dc443 9%, #cccccc 14%, #9dc443 18%, #9dc443 24%, #cccccc 29%, #9dc443 34%, #9dc443 39%, #cccccc 43%, #9dc443 48%, #bbbbbb 64%); /* FF3.6+ */
 				background: -webkit-gradient(linear, left top, right bottom, color-stop(9%,#9dc443), color-stop(14%,#cccccc), color-stop(18%,#9dc443), color-stop(24%,#9dc443), color-stop(29%,#cccccc), color-stop(34%,#9dc443), color-stop(39%,#9dc443), color-stop(43%,#cccccc), color-stop(48%,#9dc443), color-stop(64%,#bbbbbb)); /* Chrome,Safari4+ */
@@ -43,12 +44,138 @@
 				background: -ms-linear-gradient(-45deg,  #9dc443 9%,#cccccc 14%,#9dc443 18%,#9dc443 24%,#cccccc 29%,#9dc443 34%,#9dc443 39%,#cccccc 43%,#9dc443 48%,#bbbbbb 64%); /* IE10+ */
 				background: linear-gradient(-45deg,  #9dc443 9%,#cccccc 14%,#9dc443 18%,#9dc443 24%,#cccccc 29%,#9dc443 34%,#9dc443 39%,#cccccc 43%,#9dc443 48%,#bbbbbb 64%); /* W3C */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dc443', endColorstr='#bbbbbb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+				-webkit-animation: move 2s linear infinite;
+				-moz-animation: move 2s linear infinite;
 
 			}
+			.wrap .bar.loading2{
+				background: #9dc443; /* Old browsers */
+				background: -moz-linear-gradient(-45deg, #9dc443 5%, #cccccc 13%, #9dc443 21%, #9dc443 29%, #cccccc 37%, #9dc443 46%, #9dc443 55%, #cccccc 64%, #9dc443 72%, #9dc443 80%, #cccccc 88%, #9dc443 97%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, right bottom, color-stop(5%,#9dc443), color-stop(13%,#cccccc), color-stop(21%,#9dc443), color-stop(29%,#9dc443), color-stop(37%,#cccccc), color-stop(46%,#9dc443), color-stop(55%,#9dc443), color-stop(64%,#cccccc), color-stop(72%,#9dc443), color-stop(80%,#9dc443), color-stop(88%,#cccccc), color-stop(97%,#9dc443)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* IE10+ */
+				background: linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dc443', endColorstr='#9dc443',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+				-webkit-animation: move 3s linear infinite;
+				-moz-animation: move 3s linear infinite;
+				width:50%;
+				height:100%;
+			}
+			.wrap .bar.loading3{
+				background: #9dc443; /* Old browsers */
+				background: -moz-linear-gradient(-45deg, #9dc443 5%, #cccccc 13%, #9dc443 21%, #9dc443 29%, #cccccc 37%, #9dc443 46%, #9dc443 55%, #cccccc 64%, #9dc443 72%, #9dc443 80%, #cccccc 88%, #9dc443 97%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, right bottom, color-stop(5%,#9dc443), color-stop(13%,#cccccc), color-stop(21%,#9dc443), color-stop(29%,#9dc443), color-stop(37%,#cccccc), color-stop(46%,#9dc443), color-stop(55%,#9dc443), color-stop(64%,#cccccc), color-stop(72%,#9dc443), color-stop(80%,#9dc443), color-stop(88%,#cccccc), color-stop(97%,#9dc443)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* IE10+ */
+				background: linear-gradient(-45deg, #9dc443 5%,#cccccc 13%,#9dc443 21%,#9dc443 29%,#cccccc 37%,#9dc443 46%,#9dc443 55%,#cccccc 64%,#9dc443 72%,#9dc443 80%,#cccccc 88%,#9dc443 97%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dc443', endColorstr='#9dc443',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+				-webkit-animation: move 2s linear infinite;
+				-moz-animation: move 2s linear infinite;
+			}
 		</style>
+		<style>
+		.meter { 
+			height: 20px;  /* Can be anything */
+			position: relative;
+			margin: 60px 0 20px 0; /* Just for demo spacing */
+			background: #555;
+			-moz-border-radius: 25px;
+			-webkit-border-radius: 25px;
+			border-radius: 25px;
+			padding: 10px;
+			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+		}
+		.meter > span {
+			display: block;
+			height: 100%;
+			background-color: rgb(43,194,83);
+			background-image: -webkit-gradient(
+			  linear,
+			  left bottom,
+			  left top,
+			  color-stop(0, rgb(43,194,83)),
+			  color-stop(1, rgb(84,240,84))
+			 );
+			background-image: -moz-linear-gradient(
+			  center bottom,
+			  rgb(43,194,83) 37%,
+			  rgb(84,240,84) 69%
+			 );
+			-webkit-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			-moz-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			position: relative;
+			overflow: hidden;
+		}
+		.meter > span:after{
+			content: "";
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background-image: 
+			   -webkit-gradient(linear, 0 0, 100% 100%, 
+			      color-stop(.25, rgba(255, 255, 255, .2)), 
+			      color-stop(.25, transparent), color-stop(.5, transparent), 
+			      color-stop(.5, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, transparent), to(transparent)
+			   );
+			background-image: 
+				-moz-linear-gradient(
+				  -45deg, 
+			      rgba(255, 255, 255, .2) 25%, 
+			      transparent 25%, 
+			      transparent 50%, 
+			      rgba(255, 255, 255, .2) 50%, 
+			      rgba(255, 255, 255, .2) 75%, 
+			      transparent 75%, 
+			      transparent
+			   );
+			z-index: 1;
+			-webkit-background-size: 50px 50px;
+			-moz-background-size: 50px 50px;
+			-webkit-animation: move 2s linear infinite;
+			-moz-animation: move 2s linear infinite;
+			overflow: hidden;
+		}
+		
+		
+		@-webkit-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 50px 50px;
+		    }
+		}
+		
+		@-moz-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 50px 50px;
+		    }
+		}
+		
+		.nostripes > span > span, .nostripes > span:after {
+			-webkit-animation: none;
+			-moz-animation: none;
+			background-image: none;
+		}
+	</style>
 	</head>
 	<body>
-		<div id="progressbar">
+		<div class="wrap">
 			<div class="bar progressbar finish"></div>
 			<img class="step progressbar" src="index.jpeg"/>
 			<div class="bar progressbar finish"></div>
@@ -59,7 +186,38 @@
 			<img class="step progressbar" src="index.jpeg"/>
 			<div class="bar progressbar last"></div>
 		</div>
-		<script type="text/javascript" src="jquery-1.7.1.min.js" ></script>
+		<div class="wrap">
+			<div class="bar progressbar finish"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar finish"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar">
+				<span class=" bar progressbar loading2"></span>
+			</div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar last"></div>
+		</div>
+		<div class="wrap">
+			<div class="bar progressbar finish"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar finish"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar loading3">
+			</div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar"></div>
+			<img class="step progressbar" src="index.jpeg"/>
+			<div class="bar progressbar last"></div>
+		</div>
+	<div id="page-wrap">
+
+		<div class="meter">
+			<span style="width: 25%"></span>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery-1.7.1.min.js" ></script>
 		<script>
 		(function(){
 			console.log("");
